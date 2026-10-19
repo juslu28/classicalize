@@ -1,0 +1,64 @@
+# reference recordings for calibrating the audio (CLAP) listener – what real period music sounds like
+# baroque
+Bach Brandenburg Concerto No. 3 BWV 1048
+Bach Air on the G String
+Bach Cello Suite No. 1 Prelude
+Bach Goldberg Variations Aria harpsichord
+Bach Toccata and Fugue in D minor
+Bach Jesu Joy of Man's Desiring
+Vivaldi Four Seasons Spring Allegro
+Vivaldi Four Seasons Winter
+Handel Water Music Hornpipe
+Handel Messiah Hallelujah chorus
+Pachelbel Canon in D original instruments
+Corelli Christmas Concerto
+Purcell Dido's Lament
+Telemann Concerto for Viola
+Rameau Les Indes galantes
+Scarlatti Sonata K 141 harpsichord
+Albinoni Oboe Concerto in D minor
+Bach Orchestral Suite No. 3 Overture
+Vivaldi Concerto for Two Violins A minor
+Handel Sarabande
+# classical
+Mozart Eine kleine Nachtmusik Allegro
+Mozart Symphony No. 40 G minor first movement
+Mozart Piano Sonata No. 16 K 545
+Mozart Rondo alla Turca
+Mozart Clarinet Concerto Adagio
+Mozart Requiem Lacrimosa
+Mozart Piano Concerto No. 21 Andante
+Haydn String Quartet Op. 76 No. 3 Emperor
+Haydn Symphony No. 94 Surprise
+Haydn Trumpet Concerto
+Beethoven Symphony No. 5 first movement
+Beethoven Moonlight Sonata first movement
+Beethoven Fur Elise
+Beethoven Pathetique Sonata Adagio
+Beethoven Symphony No. 7 Allegretto
+Beethoven String Quartet Op. 18 No. 1
+Gluck Dance of the Blessed Spirits
+Boccherini Minuet
+Clementi Sonatina Op. 36 No. 1
+Mozart Flute Quartet in D K 285
+# romantic
+Chopin Nocturne Op. 9 No. 2
+Chopin Ballade No. 1
+Chopin Fantaisie-Impromptu
+Chopin Raindrop Prelude
+Tchaikovsky Swan Lake Scene
+Tchaikovsky Piano Concerto No. 1
+Tchaikovsky Nutcracker Waltz of the Flowers
+Brahms Hungarian Dance No. 5
+Brahms Clarinet Quintet Adagio
+Schubert Ave Maria
+Schubert Serenade Standchen
+Schumann Traumerei
+Mendelssohn Violin Concerto E minor
+Liszt Liebestraum No. 3
+Dvorak Symphony No. 9 Largo
+Rachmaninoff Piano Concerto No. 2 first movement
+Grieg In the Hall of the Mountain King
+Elgar Nimrod
+Debussy Clair de Lune
+Saint-Saens The Swan

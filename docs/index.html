@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classicalize</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#f5f0e6; --panel:#fbf8f2; --ink:#2a2118; --muted:#6f6355; --line:#e3d9c6; --soft:#efe7d8;
+  --accent:#7a2e2e; --accent-ink:#fff; --tag-ink:#fff; --gold:#a8834c; --good:#3f6b45;
+  --baroque:#b07a1e; --classical:#2f6fb0; --romantic:#b03a5b;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16120e; --panel:#1f1a15; --ink:#ede4d3; --muted:#a89a86; --line:#3a3128; --soft:#2a231c;
+    --accent:#d48a7c; --accent-ink:#1a1410; --tag-ink:#16120e; --gold:#d2ad72; --good:#8fbf8f;
+    --baroque:#b8822a; --classical:#4f8ad0; --romantic:#cc5f86;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16120e; --panel:#1f1a15; --ink:#ede4d3; --muted:#a89a86; --line:#3a3128; --soft:#2a231c;
+  --accent:#d48a7c; --accent-ink:#1a1410; --tag-ink:#16120e; --gold:#d2ad72; --good:#8fbf8f;
+  --baroque:#b8822a; --classical:#4f8ad0; --romantic:#cc5f86;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans)}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 80px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.brand{font:600 34px/1 var(--serif);color:var(--ink);text-decoration:none}
+.brand em{color:var(--accent);font-style:italic}
+.links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:99px;font-weight:500}
+.links a.on{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.toggle{background:none;border:1px solid var(--line);color:var(--muted);font:500 12px var(--sans);padding:5px 10px;border-radius:99px;cursor:pointer}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px}
+h1{font:600 42px/1.05 var(--serif);margin:0 0 6px}
+h2{font:600 28px/1.15 var(--serif);margin:0 0 10px}
+h3{font:600 20px/1.2 var(--serif);margin:0 0 8px}
+p{margin:0 0 10px}
+.sub{color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=text]{flex:1;min-width:220px;font:16px var(--sans);padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+button.btn{font:600 15px var(--sans);padding:12px 18px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+button:disabled{opacity:.5;cursor:default}
+a{color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+label.f{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+select{width:100%;font:14px var(--sans);padding:9px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.wlab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.cands{margin-top:12px;display:none}
+.cand{display:flex;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;cursor:pointer}
+.cand .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cand:hover,.lib .it:hover{border-color:var(--gold)}
+.steps{list-style:none;padding:0;margin:0}
+.steps li{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border:0}
+.steps .tm{margin-left:auto;font:12px ui-monospace,Menlo,monospace;color:var(--muted)}
+.steps .ic{width:16px;color:var(--good)}
+.clock{font:600 40px/1 var(--serif)}
+.hero{display:flex;gap:18px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 10px;border-radius:99px;font-size:13px;font-weight:600;color:var(--tag-ink)}
+.tag.baroque{background:var(--baroque)} .tag.classical{background:var(--classical)} .tag.romantic{background:var(--romantic)}
+audio{width:100%;margin:2px 0 12px}
+.players label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.two{grid-template-columns:1fr} h1{font-size:34px}}
+blockquote{margin:12px 0 0;padding:14px 18px;border-left:3px solid var(--gold);background:var(--bg);border-radius:0 10px 10px 0;font:italic 500 19px/1.45 var(--serif)}
+.bars .b{display:grid;grid-template-columns:150px 1fr 48px;gap:10px;align-items:center;font-size:13px;margin:6px 0}
+.track{height:8px;background:var(--soft);border-radius:99px;overflow:hidden}
+.fill{height:100%;background:var(--accent);border-radius:4px}
+.fill.r{background:var(--gold)}
+.bars .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--bg)}
+.chip.mono{font-family:ui-monospace,Menlo,monospace;border-radius:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:10px 0}
+.stat{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+.stat b{display:block;font:600 28px/1.1 var(--serif)}
+.stat span{font-size:12px;color:var(--muted)}
+.stepnum{display:inline-flex;width:30px;height:30px;border-radius:50%;align-items:center;justify-content:center;background:var(--accent);color:var(--accent-ink);font:600 15px var(--sans);margin-right:10px;vertical-align:middle}
+ul.why{margin:6px 0 0;padding-left:20px} ul.why li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:500}
+.timeline{display:flex;height:34px;border-radius:8px;overflow:hidden;gap:2px;margin:8px 0}
+.timeline div{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent-ink);background:var(--accent);min-width:14px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.ccard{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+.ccard h3{margin-bottom:2px}
+.lib{display:flex;flex-direction:column;gap:6px}
+.lib .it{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer;flex-wrap:wrap}
+.hidden{display:none!important}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:5px 8px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:9}
+.err{color:#b03a3a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#/">Classical<em>ize</em></a>
+    <div class="links">
+      <a href="#/" id="navCreate">Create</a>
+      <a href="#/guide" id="navGuide">Guide</a>
+      <button class="toggle" id="themeBtn">Theme</button>
+    </div>
+  </nav>
+
+  <!-- ============================== CREATE -->
+  <main id="viewCreate">
+    <section class="card hidden" id="demoCard">
+      <h1>Pop songs, as if written in 1730, 1790 or 1840.</h1>
+      <p class="sub">Classicalize takes a song's most popular 20 seconds and plays them with classical instruments. A slider sets how far it strays from the original: all the way left is the song note for note on an orchestra; all the way right is a classical piece with only hints of the song.</p>
+      <p class="small">This hosted page plays songs that were already made with the app, at five slider settings. Making new songs needs the full app running on your own computer (it downloads the song, separates the instruments with AI and records the orchestra). <span id="repoLink"></span></p>
+    </section>
+    <section class="card" id="makeCard">
+      <h1>Any song, as if written in 1730, 1790 or 1840.</h1>
+      <p class="sub">Type a song name. It finds the song's most popular 20 seconds and plays them with classical instruments, usually in under a minute. The slider sets how far it strays from the original.</p>
+      <div class="row" style="margin-top:14px">
+        <input type="text" id="q" placeholder="e.g. Blinding Lights – The Weeknd" autocomplete="off">
+        <button class="btn ghost" id="findBtn">Find recordings</button>
+        <button class="btn" id="goBtn">Classicalize</button>
+      </div>
+      <div class="small" style="margin-top:8px">Or <a href="#" id="upLink">upload an audio file</a> instead. <input type="file" id="upFile" accept="audio/*" class="hidden"> <span id="upName"></span></div>
+      <div class="cands" id="cands"></div>
+
+      <div class="grid">
+        <div style="grid-column:1/-1">
+          <label class="f">Original ↔ Classical: <span id="wv">half way</span></label>
+          <input type="range" id="w" min="0" max="1" step="0.05" value="0.5">
+          <div class="wlab"><span>The original, note for note, on classical instruments</span><span>A classical piece with hints of the song</span></div>
+        </div>
+        <div>
+          <label class="f">Era</label>
+          <select id="era"><option value="auto">Auto (best fit)</option><option value="baroque">Baroque · 1600–1750</option><option value="classical">Classical · 1750–1820</option><option value="romantic">Romantic · 1820–1900</option></select>
+        </div>
+        <div>
+          <label class="f">Composer</label>
+          <select id="composer"><option value="auto">Auto (most likely)</option></select>
+        </div>
+        <div>
+          <label class="f">Instruments</label>
+          <select id="ens"><option value="auto">Auto (best fit)</option><option value="piano">Solo keyboard</option><option value="string_quartet">String quartet</option><option value="chamber">Chamber ensemble</option><option value="orchestra">Orchestra</option></select>
+        </div>
+      </div>
+    </section>
+
+    <section class="card hidden" id="progCard">
+      <div class="hero">
+        <div><h2 style="margin:0">Composing…</h2><div class="small" id="progSong"></div></div>
+        <div class="clock" id="clock">0s</div>
+      </div>
+      <ul class="steps" id="steps" style="margin-top:12px"></ul>
+    </section>
+
+    <section class="card hidden" id="resCard"></section>
+
+    <section class="card">
+      <h2 id="libTitle">Library</h2>
+      <div class="lib" id="lib"><span class="small">Your classical versions will appear here.</span></div>
+    </section>
+  </main>
+
+  <!-- ============================== DETAILS -->
+  <main id="viewDetails" class="hidden"></main>
+
+  <!-- ============================== GUIDE -->
+  <main id="viewGuide" class="hidden"></main>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>window.CLZ_STATIC=true;window.CLZ_REPO="https://github.com/juslu28/classicalize";</script>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct=x=>Math.round(x*100)+'%';
+const ENS={piano:'Solo keyboard',string_quartet:'String quartet',chamber:'Chamber ensemble',orchestra:'Orchestra'};
+const ERA={baroque:'Baroque',classical:'Classical',romantic:'Romantic'};
+const STATIC=!!window.CLZ_STATIC, STEPS=[0,0.25,0.5,0.75,1];
+const getJ=async u=>{const r=await fetch(u); if(!r.ok) throw new Error(u+': '+r.status); return r.json()};
+const nearest=s=>STEPS.reduce((a,b)=>Math.abs(b-s)<Math.abs(a-s)?b:a);
+const stag=s=>String(Math.round(nearest(s)*100)).padStart(3,'0');
+const API={
+  catalog:()=>getJ(STATIC?'catalog.json':'/api/catalog'),
+  training:()=>getJ(STATIC?'training.json':'/api/training'),
+  library:()=>getJ(STATIC?'library.json':'/api/library'),
+  result:(d,s=0.5)=>STATIC?getJ(`songs/${encodeURIComponent(d)}/result_${stag(s)}.json`):getJ('/api/result/'+encodeURIComponent(d)),
+};
+let CAT=null, job=null, nlog=0, uploadId=null, chosenUrl=null, clockT=null, startT=0;
+
+// ---------- theme
+try{const t=localStorage.getItem('clz-theme'); if(t) document.documentElement.dataset.theme=t;}catch(e){}
+$('#themeBtn').onclick=()=>{const d=document.documentElement; const cur=d.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); d.dataset.theme=cur==='dark'?'light':'dark'; try{localStorage.setItem('clz-theme',d.dataset.theme)}catch(e){}};
+
+// ---------- tooltip for bars
+document.addEventListener('mousemove',e=>{const t=e.target.closest('[data-tip]'); const tip=$('#tip');
+  if(t){tip.textContent=t.dataset.tip; tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY+12)+'px'; tip.style.opacity=1;} else tip.style.opacity=0;});
+
+function bar(label,v,cls='',tip='',disp=null,color=''){return `<div class="b" data-tip="${esc(tip||label+': '+v.toFixed(2))}"><span>${esc(label)}</span><div class="track"><div class="fill ${cls}" style="width:${Math.max(2,Math.min(1,v)*100).toFixed(0)}%${color?';background:'+color:''}"></div></div><span class="v">${disp??v.toFixed(2)}</span></div>`}
+// bars for close scores: width relative to the spread so differences are visible
+function relWidths(xs){const lo=Math.min(...xs),hi=Math.max(...xs);return xs.map(x=>hi>lo?0.25+0.75*(x-lo)/(hi-lo):1)}
+
+// ---------- slider label
+const wLabel=v=>v<0.2?'the original, played by an orchestra':v<0.45?'close to the original':v<0.6?'half way':v<0.8?'mostly classical':'a classical piece with hints of the song';
+$('#w').oninput=e=>{$('#wv').textContent=wLabel(+e.target.value)};
+
+// ---------- catalog → composer select
+async function loadCatalog(){
+  CAT=await API.catalog();
+  fillComposers();
+}
+function fillComposers(){
+  const era=$('#era').value, sel=$('#composer'), cur=sel.value;
+  let h='<option value="auto">Auto (most likely)</option>';
+  for(const e of ['baroque','classical','romantic']){
+    if(era!=='auto'&&era!==e) continue;
+    h+=`<optgroup label="${ERA[e]}">`+CAT.composers.filter(c=>c.era===e).map(c=>`<option value="${c.id}">${esc(c.short)} (${c.years})</option>`).join('')+'</optgroup>';
+  }
+  sel.innerHTML=h; if([...sel.options].some(o=>o.value===cur)) sel.value=cur;
+}
+$('#era').onchange=fillComposers;
+$('#composer').onchange=()=>{const c=CAT.composers.find(x=>x.id===$('#composer').value); if(c&&$('#era').value!=='auto'&&$('#era').value!==c.era){$('#era').value=c.era;fillComposers();$('#composer').value=c.id;}};
+
+// ---------- upload / search
+$('#upLink').onclick=e=>{e.preventDefault();$('#upFile').click()};
+$('#upFile').onchange=async e=>{const f=e.target.files[0]; if(!f) return; $('#upName').textContent='Uploading…';
+  const fd=new FormData(); fd.append('file',f); const j=await (await fetch('/api/upload',{method:'POST',body:fd})).json();
+  uploadId=j.upload_id; $('#upName').textContent='✓ '+j.name; if(!$('#q').value) $('#q').value=j.name.replace(/\.[^.]+$/,'');};
+$('#findBtn').onclick=async()=>{const q=$('#q').value.trim(); if(!q) return; $('#findBtn').disabled=true; $('#findBtn').textContent='Searching…';
+  try{const r=await (await fetch('/api/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q})})).json();
+    const box=$('#cands'); box.style.display='block';
+    box.innerHTML=r.results.map((x,i)=>`<label class="cand"><input type="radio" name="cand" value="${x.url}" ${i==0?'checked':''}><span class="t">${esc(x.title)} <span class="small">· ${esc(x.channel||'')}</span></span><span class="small">${(x.views||0).toLocaleString()} views</span></label>`).join('');
+    chosenUrl=r.results[0]?.url||null; box.querySelectorAll('input').forEach(el=>el.onchange=()=>chosenUrl=el.value);
+  }catch(e){alert('Search failed: '+e)}
+  $('#findBtn').disabled=false; $('#findBtn').textContent='Find recordings';};
+
+// ---------- run a job
+$('#goBtn').onclick=async()=>{
+  const q=$('#q').value.trim(); if(!q&&!uploadId) return;
+  const body={query:q,video_url:chosenUrl,upload_id:uploadId,s:+$('#w').value,era:$('#era').value,composer:$('#composer').value,ensemble:$('#ens').value};
+  startJob(body,q);
+};
+async function startJob(body,label){
+  const r=await fetch('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok){alert((await r.json()).detail);return}
+  job=(await r.json()).id; nlog=0; $('#steps').innerHTML=''; $('#progSong').textContent=label||'';
+  $('#progCard').classList.remove('hidden'); $('#resCard').classList.add('hidden'); $('#goBtn').disabled=true;
+  startT=Date.now(); clearInterval(clockT); clockT=setInterval(()=>{$('#clock').textContent=Math.round((Date.now()-startT)/1000)+'s'},250);
+  $('#progCard').scrollIntoView({behavior:'smooth',block:'nearest'});
+  poll();
+}
+let lastStepEl=null, lastT=0;
+async function poll(){
+  if(!job) return;
+  const j=await (await fetch(`/api/jobs/${job}?since=${nlog}`)).json();
+  j.log.forEach(l=>{
+    if(lastStepEl){lastStepEl.querySelector('.ic').textContent='✓'; lastStepEl.querySelector('.tm').textContent=(l.t-lastT).toFixed(1)+'s';}
+    const li=document.createElement('li'); li.innerHTML=`<span class="ic">•</span><span>${esc(l.msg)}</span><span class="tm"></span>`;
+    $('#steps').appendChild(li); lastStepEl=li; lastT=l.t;
+  });
+  nlog=j.n_log;
+  if(j.status==='done'||j.status==='error'){
+    clearInterval(clockT); $('#goBtn').disabled=false; chosenUrl=null; uploadId=null; lastStepEl=null;
+    if(j.status==='done'){ const r=await API.result(j.dir); showResult(r); loadLib(); }
+    else $('#steps').insertAdjacentHTML('beforeend',`<li class="err">${esc(j.error)}</li>`);
+    return;
+  }
+  setTimeout(poll,600);
+}
+
+function F(r,n){return STATIC?`songs/${encodeURIComponent(r.dir)}/${n}`:`/files/${encodeURIComponent(r.dir)}/${n}`}
+const fmtT=t=>{t=Math.round(t);return `${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`};
+const LAYER={melody:'Melody',bass:'Bass',accompaniment:'Backing parts',percussion:'Drums'};
+const STATE={original:'original',classical:'re-written classically',developed:'skeleton + new passages',full:'orchestral percussion',timpani:'timpani only',cadences:'timpani at cadences',none:'none'};
+const CLS=r=>r.files.classical||r.files.mp3||r.files.wav;   // older results used other names
+function showResult(r,keep=null,scroll=true){
+  const p=r.params, d=r.details, comp=d?.composer;
+  $('#resCard').innerHTML=`
+    <div class="hero">
+      <div>
+        <div class="small">${r.source?.views?`${(r.source.views).toLocaleString()} views on YouTube · `:''}${d?esc(d.song.key)+' · '+d.song.tempo+' bpm':''}</div>
+        <h2 style="margin:4px 0 6px">${esc(r.title)}</h2>
+        <div class="row"><span class="tag ${p.era}">${ERA[p.era]}</span><span>in the style of <b>${esc(comp?comp.name:(compName(p.composer)||'a '+ERA[p.era]+' composer'))}</b> · ${ENS[p.ensemble]}</span></div>
+      </div>
+      <div class="small" style="text-align:right">${STATIC?`slider at ${Math.round(r.slider*100)}%`:`made in ${Math.round(r.seconds)}s`}</div>
+    </div>
+    ${r.window?`<div class="small" style="margin-top:8px">Clip: <b>${fmtT(r.window.start)}–${fmtT(r.window.end)}</b> (${(r.window.end-r.window.start).toFixed(1)} s), chosen from ${esc(r.window.reason)}. The classical version is exactly the same length.</div>`:''}
+    ${d?.slider?`<div class="chips" style="margin-top:10px">${d.slider.layers.map(l=>`<span class="chip" data-tip="${esc(l.text)}"><b>${esc(LAYER[l.layer])}</b>: ${esc(STATE[l.state]||l.state)}</span>`).join('')}</div>`:''}
+    <div class="two" style="margin-top:16px">
+      <div class="players">
+        <label>Original</label><audio controls preload="metadata" src="${F(r,r.files.original)}"></audio>
+        <label>Classical version</label><audio controls preload="auto" id="clsAudio" src="${F(r,CLS(r))}"></audio>
+      </div>
+      <div>
+        ${comp?`<div class="bars">${comp.top.slice(0,3).map(c=>bar(c.name,c.prob,'',`${c.name}: ${pct(c.prob)} likely`,pct(c.prob))).join('')}</div>
+        <div class="small">Most likely composer for this song</div>`:''}
+        <blockquote style="font-size:17px">${esc(r.review)}</blockquote>
+      </div>
+    </div>
+    <div class="row" style="margin-top:16px;gap:14px;align-items:center">
+      <span class="small" style="min-width:150px">${STATIC?'Original ↔ Classical:':'Try another setting:'}</span>
+      <input type="range" id="w2" min="0" max="1" step="${STATIC?0.25:0.05}" value="${r.slider??0.5}" style="flex:1;min-width:160px">
+      <span class="small" id="w2v" style="min-width:150px">${wLabel(r.slider??0.5)}</span>
+      ${STATIC?'':'<button class="btn ghost" id="remakeBtn">Re-make (a few seconds)</button>'}
+    </div>
+    <div class="row" style="margin-top:14px;justify-content:space-between">
+      <a class="btn" style="text-decoration:none;display:inline-block;padding:11px 16px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:600" href="#/details/${encodeURIComponent(r.dir)}${STATIC?'/'+stag(r.slider):''}">See how it was made →</a>
+      <span class="small">Save: ${r.mp3_ready?`<a href="${F(r,r.files.mp3)}" download>MP3</a> · `:''}<a href="${F(r,r.files.midi||'classical.mid')}" download>MIDI score</a></span>
+    </div>`;
+  if($('#w2')){ $('#w2').oninput=e=>{$('#w2v').textContent=wLabel(+e.target.value)};
+    if(STATIC) $('#w2').onchange=async e=>{
+      // swap to the pre-made version, keeping the playback position
+      const a=$('#clsAudio'), t=a.currentTime, playing=!a.paused;
+      const r2=await API.result(r.dir,+e.target.value); showResult(r2,{t,playing});
+    };
+    else $('#remakeBtn').onclick=()=>startJob({dir:r.dir,s:+$('#w2').value,era:$('#era').value,composer:$('#composer').value,ensemble:$('#ens').value}, r.title); }
+  if(keep){ const a=$('#clsAudio'); a.addEventListener('loadedmetadata',()=>{a.currentTime=Math.min(keep.t,a.duration||keep.t); if(keep.playing) a.play().catch(()=>{});},{once:true}); }
+  $('#resCard').classList.remove('hidden'); if(!keep&&scroll) $('#resCard').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+async function loadLib(){
+  const j=await API.library(); if(!j.items.length) return;
+  $('#lib').innerHTML=j.items.map(x=>`<div class="it" data-d="${esc(x.dir)}"><span><span class="tag ${x.era}" style="margin-right:8px">${ERA[x.era]}</span>${esc(x.title)}</span><span class="small">${esc(compName(x.composer))} · ${ENS[x.ensemble]||x.ensemble}</span></div>`).join('');
+  $('#lib').querySelectorAll('.it').forEach(el=>el.onclick=async()=>{const r=await API.result(el.dataset.d,STATIC?0.5:undefined); showResult(r);});
+  return j.items;
+}
+const compName=id=>CAT?.composers.find(c=>c.id===id)?.short||id||'';
+
+// ============================== DETAILS
+async function showDetails(dir,tag){
+  const r=await API.result(dir,tag!=null?(+tag)/100:0.5); const d=r.details, v=$('#viewDetails');
+  if(!d){v.innerHTML=`<section class="card"><h2>${esc(r.title)}</h2><p>This song was made with an older version. Run it again to see the walkthrough.</p></section>`;return}
+  const s=d.song, e=d.era, c=d.composer, n=d.ensemble, ch=d.changes, sc=d.scores;
+  const total=s.form.reduce((a,f)=>a+(f.end-f.start),0)||1;
+  const CL={era_harmony:'Era harmony',voice_leading:'Voice leading',cadences:'Cadences',rhythm:'Rhythm',melody_style:'Melodic style',form:'Form',texture:'Texture',instruments:'Instruments'};
+  const RL={melody:'Melody',harmony:'Harmony',structure:'Structure',tempo:'Tempo'};
+  v.innerHTML=`
+  <section class="card">
+    <div class="small"><a href="#/${STATIC?'song/'+encodeURIComponent(r.dir)+'/'+stag(r.slider):''}">← Back</a></div>
+    <h1 style="margin-top:8px">${esc(r.title)}</h1>
+    <div class="row" style="margin-bottom:12px"><span class="tag ${e.id}">${esc(e.name)}</span><span>in the style of <b>${esc(c.name)}</b> · ${esc(n.name)}</span></div>
+    <div class="two players">
+      <div><label>Original</label><audio controls preload="metadata" src="${F(r,r.files.original)}"></audio></div>
+      <div><label>Classical version</label><audio controls preload="metadata" src="${F(r,CLS(r))}"></audio></div>
+    </div>
+  </section>
+
+  ${d.slider?`<section class="card">
+    <h2><span class="stepnum">1</span>The clip and the slider</h2>
+    <p>${s.clip?`The clip runs <b>${fmtT(s.clip.start)}–${fmtT(s.clip.end)}</b> of the song (${s.clip.length} s), chosen from ${esc(s.clip.reason)}. It starts and ends on a bar line. The classical version follows the original beat by beat, so it is exactly as long.`:''}</p>
+    <p>Slider at <b>${Math.round(d.slider.value*100)}%</b>, which means ${esc(d.slider.label)}. Each layer of the music switches from the original to classical writing at its own point:</p>
+    <table><thead><tr><th>Layer</th><th>Now</th><th>What you hear</th></tr></thead><tbody>
+      ${d.slider.layers.map(l=>`<tr><td><b>${esc(LAYER[l.layer])}</b></td><td class="small">${esc(STATE[l.state]||l.state)}</td><td>${esc(l.text)}</td></tr>`).join('')}
+    </tbody></table>
+    <p class="small" style="margin-top:10px">${d.slider.n_notes} notes were transcribed from the original (Basic Pitch), plus ${d.slider.n_hits} drum hits. Classical liberties at this setting: re-harmonisation ${pct(d.slider.knobs.reharm)}, ornaments ${pct(d.slider.knobs.ornament)}, rhythm straightening ${pct(d.slider.knobs.straighten)}, re-composed melody ${pct(d.slider.knobs.develop)}.</p>
+  </section>`:''}
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?2:1}</span>Listening to the original</h2>
+    <div class="stats">
+      <div class="stat"><b>${esc(s.key)}</b><span>key</span></div>
+      <div class="stat"><b>${s.tempo} bpm</b><span>tempo</span></div>
+      <div class="stat"><b>${esc(s.meter)}</b><span>time signature</span></div>
+      <div class="stat"><b>${s.melody.low||'–'}–${s.melody.high||'–'}</b><span>vocal range (${s.melody.range} semitones)</span></div>
+      <div class="stat"><b>${s.melody.syncopation}%</b><span>of melody notes off the beat</span></div>
+    </div>
+    <h3>Song structure</h3>
+    <div class="timeline">${s.form.map(f=>`<div data-tip="Section ${f.label}: ${f.start}s–${f.end}s · energy ${pct(f.energy)}${f.label===s.chorus_label?' (loudest, likely the chorus)':''}" style="flex:${Math.max(0.5,f.end-f.start)};opacity:${(0.3+0.7*f.energy).toFixed(2)}">${f.label}</div>`).join('')}</div>
+    <p class="small">Each block is a section; darker means louder. Repeated letters are sections that sound alike (verse, chorus…). Section ${esc(s.chorus_label)} is the loudest, most likely the chorus.</p>
+    ${s.loop?`<h3 style="margin-top:12px">Main chord loop</h3><div class="chips">${s.loop.names.map((x,i)=>`<span class="chip mono">${esc(x)} <span class="small">${esc(s.loop.roman[i])}</span></span>`).join('')}</div><p class="small" style="margin-top:6px">This four-chord loop makes up ${pct(s.loop.share)} of the song's harmony. Pop songs often repeat one loop; classical pieces move through a progression toward cadences.</p>`:''}
+  </section>
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?3:2}</span>The era: <span style="color:var(--${e.id})">${esc(e.name)}</span> <span class="small">${esc(e.years)}</span></h2>
+    <p>${esc(e.summary)}</p>
+    <div class="two">
+      <div><h3>Why ${esc(e.name)}?</h3><ul class="why">${e.why.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+      <div><h3>Era match scores for this song</h3><div class="bars">${(()=>{const W=relWidths(e.scores.map(x=>x.adj));return e.scores.map((x,i)=>bar(x.name,W[i],'',`${x.name} (best: ${x.composer}): classical ${x.C.toFixed(2)}, retained ${x.R.toFixed(2)}`,x.adj.toFixed(3),`var(--${x.era})`)).join('')})()}</div>
+      <h3 style="margin-top:12px">What defines the ${esc(e.name)} sound</h3><ul class="why">${e.traits.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?4:3}</span>The composer: ${esc(c.name)} <span class="small">${esc(c.years)} · ${esc(c.place)}</span></h2>
+    <p>${esc(c.bio)}</p>
+    <div class="two">
+      <div>
+        <h3>${c.chosen_by_user?'You chose this composer':'Most likely composer'}</h3>
+        <div class="bars">${c.top.map(x=>bar(x.name,x.prob,'',`${x.name} (${ERA[x.era]}): ${pct(x.prob)} likely, style fit ${x.fit.toFixed(2)}`,pct(x.prob))).join('')}</div>
+        <h3 style="margin-top:12px">Why ${esc(c.short)} fits this song</h3>
+        <ul class="why">${c.reasons.map(x=>`<li>${esc(x[0].toUpperCase()+x.slice(1))}.</li>`).join('')}</ul>
+      </div>
+      <div>
+        <h3>What was borrowed from ${esc(c.short)}</h3>
+        <ul class="why">${c.applied.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+        <h3 style="margin-top:12px">Hear the real thing</h3>
+        <div class="chips">${c.works.map(w=>`<span class="chip">${esc(w)}</span>`).join('')}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?5:4}</span>The instruments: ${esc(n.name)}</h2>
+    <p>${esc(n.summary)}</p>
+    <ul class="why">${n.why.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+    <table style="margin-top:12px"><thead><tr><th>Instrument</th><th>Job in this arrangement</th><th>Range used</th></tr></thead>
+      <tbody>${n.parts.map(x=>`<tr><td><b>${esc(x.instrument)}</b></td><td>${esc(x.what)}</td><td class="small">${esc(x.range)}</td></tr>`).join('')}</tbody></table>
+    ${n.alternatives.length>1?`<h3 style="margin-top:16px">Other ensembles in ${esc(c.short)}'s style</h3><div class="bars">${(()=>{const W=relWidths(n.alternatives.map(a=>a.adj));return n.alternatives.map((a,i)=>bar(a.name,W[i],'',`${a.name}: classical ${a.C.toFixed(2)}, retained ${a.R.toFixed(2)}`,a.adj.toFixed(3))).join('')})()}</div><p class="small">Bar length is relative to the closest competitor, so small differences stay visible.</p>`:''}
+  </section>
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?6:5}</span>What changed</h2>
+    <div class="stats">
+      <div class="stat"><b>${ch.kept_pct}%</b><span>of the original chords kept</span></div>
+      <div class="stat"><b>${ch.cadences}</b><span>phrase-ending cadences (V → I)</span></div>
+      <div class="stat"><b>${ch.sync_before}% → ${ch.sync_after}%</b><span>off-beat melody notes</span></div>
+      <div class="stat"><b>${ch.tempo_before} → ${ch.tempo_after}</b><span>tempo (bpm)</span></div>
+      <div class="stat"><b>${ch.melody_notes_before} → ${ch.melody_notes_after}</b><span>melody notes (ornaments add notes)</span></div>
+    </div>
+    ${ch.examples.length?`<h3>Re-harmonised chords (first few)</h3><div class="chips">${ch.examples.map(x=>`<span class="chip mono" data-tip="at ${x.at}s">${esc(x.from)} → ${esc(x.to)}</span>`).join('')}</div>`:''}
+    <ul class="why" style="margin-top:10px"><li>${esc(ch.dropped)}</li><li>${esc(ch.ending)}</li></ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="stepnum">${d.slider?7:6}</span>The verdict</h2>
+    <blockquote>${esc(r.review)}</blockquote>
+    <div class="two" style="margin-top:16px">
+      <div><h3>How classical? ${sc.classicalness.score.toFixed(2)}</h3><div class="bars">${Object.entries(sc.classicalness.components).map(([k,x])=>bar(CL[k]||k,x)).join('')}</div></div>
+      <div><h3>How much of the song survived? ${sc.retention.score.toFixed(2)}</h3><div class="bars">${Object.entries(sc.retention.components).map(([k,x])=>bar(RL[k]||k,x,'r')).join('')}</div>
+      <p class="small" style="margin-top:12px">Slider setting ${wLabel(sc.w)} (w = ${sc.w.toFixed(2)}) · ${d.search.n_trials} arrangements compared in ${d.search.seconds}s · total time ${Math.round(r.seconds)}s</p></div>
+    </div>
+  </section>`;
+}
+
+// ============================== GUIDE
+async function showGuide(){
+  if(!CAT) await loadCatalog();
+  let tr={}; try{tr=await API.training()}catch(e){}
+  const v=$('#viewGuide');
+  const comps=e=>CAT.composers.filter(c=>c.era===e).map(c=>`
+    <div class="ccard"><h3>${esc(c.name)}</h3><div class="small">${esc(c.years)} · ${esc(c.place)}</div>
+      <p style="margin-top:8px">${esc(c.bio)}</p>
+      <div class="chips">${c.signature.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div>
+      <p class="small" style="margin-top:8px"><b>Famous works:</b> ${c.works.map(esc).join(' · ')}<br><b>Favourite settings here:</b> ${c.ensembles.map(e=>ENS[e]).join(', ')}</p></div>`).join('');
+  v.innerHTML=`
+  <section class="card">
+    <h1>Guide</h1>
+    <p class="sub">The eras, composers and ensembles Classicalize writes for, and how it decides.</p>
+    <h3 style="margin-top:14px">How a song becomes classical</h3>
+    <ol class="why">
+      <li><b>Find</b> the most-viewed real recording of the song on YouTube.</li>
+      <li><b>Pick the most popular 20 seconds</b>, using YouTube's "most replayed" data when the video has it, otherwise the loudest, most-repeated passage (the chorus). The clip is snapped to whole bars.</li>
+      <li><b>Separate</b> the vocals, bass, drums and other instruments with the Demucs AI model.</li>
+      <li><b>Transcribe every note</b> with Spotify's open-source Basic Pitch model, plus the drum hits.</li>
+      <li><b>Try styles</b>: dozens of arrangements across 12 composers and 4 ensembles are scored in a couple of seconds.</li>
+      <li><b>Blend and record</b>: the slider decides how much of the original transcription and how much classical writing you hear. It is recorded with sampled instruments in a virtual concert hall, exactly as long as the clip.</li>
+    </ol>
+    <h3 style="margin-top:14px">The Original ↔ Classical slider</h3>
+    <p><b>All the way left</b>, you hear the original clip note for note: the vocal line, bass line, synths and guitars, all at their original timing, played by an orchestra. The drums become timpani, concert snare and cymbals. <b>All the way right</b>, you hear a classical piece in the chosen composer's style that keeps only tidbits of the song: the skeleton of the tune, re-harmonised, with period accompaniment, ornaments and new passagework.</p>
+    <p>In between, each layer switches over at its own point. The drums go first (they thin out from 25% and are gone by 50%), then the tune moves onto the beat (30%), then the backing parts and bass are re-written classically (40%), and finally the tune is re-composed around its skeleton (from about 75%). Re-harmonisation and ornaments grow smoothly with the slider. The slider also weights the two scores every arrangement gets: <b>classicalness</b> (period harmony, cadences, voice-leading, rhythm, period instruments) and <b>retention</b> (how much of the tune, harmony and structure survives).</p>
+    <h3 style="margin-top:14px">Choosing a composer</h3>
+    <p>Each composer is a style recipe (era, favourite instruments, accompaniment patterns, ornaments, rubato, dynamics) plus a profile of the songs that suit them: tempo, major or minor, how dramatic the verse-to-chorus jump is, how busy and wide the melody is, how colourful the chords are. The "most likely composer" combines how well the song fits that profile with how good the arrangement in that style scored. You can override the era, composer or instruments on the Create page.</p>
+  </section>
+
+  ${['baroque','classical','romantic'].map(e=>`
+  <section class="card">
+    <h2><span style="color:var(--${e})">${esc(CAT.eras[e].name)}</span> <span class="small">${esc(CAT.eras[e].years)}</span></h2>
+    <p>${esc(CAT.eras[e].summary)}</p>
+    <ul class="why">${CAT.eras[e].traits.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+    <p class="small"><b>Typical instruments:</b> ${esc(CAT.eras[e].instruments)}</p>
+    <div class="cgrid" style="margin-top:12px">${comps(e)}</div>
+  </section>`).join('')}
+
+  <section class="card">
+    <h2>The ensembles</h2>
+    <div class="cgrid">${Object.entries(CAT.ensembles).map(([k,x])=>`
+      <div class="ccard"><h3>${esc(x.name)}</h3><p>${esc(x.summary)}</p>
+        <table><tbody>${Object.entries(x.parts).map(([r,t])=>`<tr><td class="small" style="width:34%">${esc(r.replace('_',' '))}</td><td>${esc(t)}</td></tr>`).join('')}</tbody></table>
+        <p class="small" style="margin-top:8px">Best for: ${esc(x.why)}.</p></div>`).join('')}</div>
+  </section>
+
+  ${tr.n?`<section class="card">
+    <h2>What it learned from ${tr.n} test songs</h2>
+    <p class="sub">The style search was run on ${tr.n} generated pop songs in 11 genres. It averaged classicalness ${tr.mean_C.toFixed(2)} and retention ${tr.mean_R.toFixed(2)}, and each search took about ${tr.mean_search_seconds.toFixed(1)}s.</p>
+    <div class="two">
+      <div><h3>Composers chosen</h3><div class="bars">${tr.composer_counts.map(([c,k])=>bar(compName(c),k/tr.composer_counts[0][1],'',`${compName(c)}: ${k} of ${tr.n} songs`,String(k))).join('')}</div></div>
+      <div><h3>Favourite by genre</h3><table><tbody>${Object.entries(tr.by_genre).map(([g,l])=>`<tr><td><b>${esc(g)}</b></td><td class="small">${l.map(([c,k])=>`${esc(compName(c))} (${k})`).join(' · ')}</td></tr>`).join('')}</tbody></table></div>
+    </div>
+  </section>`:''}`;
+}
+
+// ============================== router
+function route(){
+  const h=location.hash||'#/';
+  const [_, page, arg, arg2]=h.split('/');
+  ['Create','Details','Guide'].forEach(x=>$('#view'+x).classList.add('hidden'));
+  $('#navCreate').classList.toggle('on',!page); $('#navGuide').classList.toggle('on',page==='guide');
+  if(page==='details'&&arg){$('#viewDetails').classList.remove('hidden'); showDetails(decodeURIComponent(arg),arg2); window.scrollTo(0,0);}
+  else if(page==='guide'){$('#viewGuide').classList.remove('hidden'); showGuide(); window.scrollTo(0,0);}
+  else{ $('#viewCreate').classList.remove('hidden');
+    if(STATIC&&page==='song'&&arg) API.result(decodeURIComponent(arg),arg2!=null?(+arg2)/100:0.5).then(r=>showResult(r,null,false)); }
+}
+window.addEventListener('hashchange',route);
+if(STATIC){
+  $('#makeCard').classList.add('hidden'); $('#demoCard').classList.remove('hidden'); $('#libTitle').textContent='Songs';
+  if(window.CLZ_REPO) $('#repoLink').innerHTML=`The code and how to run it: <a href="${esc(window.CLZ_REPO)}">${esc(window.CLZ_REPO.replace('https://',''))}</a>.`;
+}
+loadCatalog().then(async()=>{const items=await loadLib(); route();
+  if(STATIC&&items&&items.length&&!(location.hash||'').startsWith('#/song')&&!(location.hash||'').startsWith('#/details')&&!(location.hash||'').startsWith('#/guide'))
+    showResult(await API.result(items[0].dir,0.5),null,false);
+}).catch(e=>{$('#lib').innerHTML=`<span class="err">Could not load: ${esc(e.message)}</span>`});
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Copyright (c) 2026 Justin Lu. All rights reserved.
+
+This source code and the accompanying website are made publicly visible for
+coursework. No permission is granted to copy, modify, distribute or use them
+without the author's written consent.
+
+Third-party components keep their own licenses: Demucs (MIT, Meta), Basic Pitch
+(Apache-2.0, Spotify), the MuseScore General SoundFont (MIT), yt-dlp (Unlicense),
+and the other Python packages listed in requirements.txt.
+
+Audio clips on the website are short excerpts of the original recordings,
+whose copyrights belong to their owners. They are included for educational
+commentary and comparison only.

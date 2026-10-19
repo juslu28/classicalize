@@ -1,0 +1,269 @@
+phase 1: learning the pop harmony model + calibrating the period listener …
+  harmony log-likelihood ratio  pop: {'baroque': -1.62, 'classical': -2.08, 'romantic': -1.96}  classical: {'baroque': 2.1, 'classical': 3.28, 'romantic': 3.28}
+phase 2: composer-style search on 300 songs …
+  25/300  last: synthetic hiphop #1112 (trap) → brahms / orchestra (C 0.77, R 0.96, 3.9s)
+  50/300  last: synthetic latin #1014 (reggaeton) → schubert / piano (C 0.70, R 0.92, 3.3s)
+  75/300  last: synthetic edm #1042 (edm) → beethoven / orchestra (C 0.84, R 0.79, 4.2s)
+  100/300  last: synthetic rnb #1102 (rnb) → schubert / piano (C 0.86, R 0.84, 2.8s)
+  125/300  last: synthetic edm #1145 (sensitive) → mendelssohn / orchestra (C 0.88, R 0.87, 3.7s)
+  150/300  last: synthetic ballad #1274 (pachelbel) → handel / orchestra (C 0.87, R 0.90, 2.7s)
+  175/300  last: synthetic blues #1029 (blues) → mozart / string_quartet (C 0.84, R 0.92, 4.1s)
+  200/300  last: synthetic rock #1246 (mixolydian) → mozart / string_quartet (C 0.88, R 0.89, 3.6s)
+  225/300  last: synthetic country #1255 (axis) → beethoven / orchestra (C 0.86, R 0.88, 4.2s)
+  250/300  last: synthetic ballad #1139 (fifties) → chopin / piano (C 0.72, R 0.96, 3.3s)
+  275/300  last: synthetic rnb #1181 (rnb) → schubert / string_quartet (C 0.84, R 0.90, 3.7s)
+  300/300  last: synthetic indie #1197 (mixolydian) → mozart / string_quartet (C 0.87, R 0.85, 4.0s)
+{
+ "n": 300,
+ "mean_C": 0.8185710731129732,
+ "mean_R": 0.9005095544242837,
+ "mean_search_seconds": 3.4520399888356526,
+ "composer_counts": [
+  [
+   "mozart",
+   65
+  ],
+  [
+   "schubert",
+   64
+  ],
+  [
+   "mendelssohn",
+   50
+  ],
+  [
+   "beethoven",
+   41
+  ],
+  [
+   "chopin",
+   24
+  ],
+  [
+   "brahms",
+   20
+  ],
+  [
+   "vivaldi",
+   9
+  ],
+  [
+   "handel",
+   7
+  ],
+  [
+   "haydn",
+   6
+  ],
+  [
+   "bach",
+   6
+  ],
+  [
+   "liszt",
+   4
+  ],
+  [
+   "tchaikovsky",
+   4
+  ]
+ ],
+ "era_counts": [
+  [
+   "romantic",
+   166
+  ],
+  [
+   "classical",
+   112
+  ],
+  [
+   "baroque",
+   22
+  ]
+ ],
+ "ensemble_counts": [
+  [
+   "string_quartet",
+   129
+  ],
+  [
+   "orchestra",
+   101
+  ],
+  [
+   "piano",
+   46
+  ],
+  [
+   "chamber",
+   24
+  ]
+ ],
+ "by_genre": {
+  "ballad": [
+   [
+    "chopin",
+    16
+   ],
+   [
+    "schubert",
+    8
+   ],
+   [
+    "handel",
+    5
+   ]
+  ],
+  "blues": [
+   [
+    "mozart",
+    13
+   ],
+   [
+    "brahms",
+    5
+   ],
+   [
+    "schubert",
+    5
+   ]
+  ],
+  "country": [
+   [
+    "mozart",
+    18
+   ],
+   [
+    "schubert",
+    5
+   ],
+   [
+    "haydn",
+    2
+   ]
+  ],
+  "edm": [
+   [
+    "mendelssohn",
+    21
+   ],
+   [
+    "vivaldi",
+    4
+   ],
+   [
+    "beethoven",
+    2
+   ]
+  ],
+  "hiphop": [
+   [
+    "schubert",
+    15
+   ],
+   [
+    "beethoven",
+    4
+   ],
+   [
+    "brahms",
+    3
+   ]
+  ],
+  "indie": [
+   [
+    "mozart",
+    7
+   ],
+   [
+    "mendelssohn",
+    6
+   ],
+   [
+    "beethoven",
+    6
+   ]
+  ],
+  "kpop": [
+   [
+    "beethoven",
+    19
+   ],
+   [
+    "mendelssohn",
+    5
+   ],
+   [
+    "mozart",
+    4
+   ]
+  ],
+  "latin": [
+   [
+    "brahms",
+    11
+   ],
+   [
+    "beethoven",
+    9
+   ],
+   [
+    "schubert",
+    7
+   ]
+  ],
+  "pop": [
+   [
+    "mozart",
+    18
+   ],
+   [
+    "mendelssohn",
+    5
+   ],
+   [
+    "schubert",
+    3
+   ]
+  ],
+  "rnb": [
+   [
+    "schubert",
+    20
+   ],
+   [
+    "chopin",
+    6
+   ],
+   [
+    "bach",
+    2
+   ]
+  ],
+  "rock": [
+   [
+    "mendelssohn",
+    12
+   ],
+   [
+    "mozart",
+    5
+   ]
+  ]
+ },
+ "by_w": {
+  "0.3": {
+   "C": 0.7851957473135837,
+   "R": 0.9318530703969334
+  },
+  "0.5": {
+   "C": 0.8154978840850811,
+   "R": 0.9055794932744918
+  },
+  "0.7": {
+   "C": 0.8550195879402547,
+   "R": 0.8640960996014254
+  }
+ }
+}

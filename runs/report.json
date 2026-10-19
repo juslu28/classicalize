@@ -1,0 +1,254 @@
+{
+ "n": 300,
+ "mean_C": 0.8185710731129732,
+ "mean_R": 0.9005095544242837,
+ "mean_search_seconds": 3.4520399888356526,
+ "composer_counts": [
+  [
+   "mozart",
+   65
+  ],
+  [
+   "schubert",
+   64
+  ],
+  [
+   "mendelssohn",
+   50
+  ],
+  [
+   "beethoven",
+   41
+  ],
+  [
+   "chopin",
+   24
+  ],
+  [
+   "brahms",
+   20
+  ],
+  [
+   "vivaldi",
+   9
+  ],
+  [
+   "handel",
+   7
+  ],
+  [
+   "haydn",
+   6
+  ],
+  [
+   "bach",
+   6
+  ],
+  [
+   "liszt",
+   4
+  ],
+  [
+   "tchaikovsky",
+   4
+  ]
+ ],
+ "era_counts": [
+  [
+   "romantic",
+   166
+  ],
+  [
+   "classical",
+   112
+  ],
+  [
+   "baroque",
+   22
+  ]
+ ],
+ "ensemble_counts": [
+  [
+   "string_quartet",
+   129
+  ],
+  [
+   "orchestra",
+   101
+  ],
+  [
+   "piano",
+   46
+  ],
+  [
+   "chamber",
+   24
+  ]
+ ],
+ "by_genre": {
+  "ballad": [
+   [
+    "chopin",
+    16
+   ],
+   [
+    "schubert",
+    8
+   ],
+   [
+    "handel",
+    5
+   ]
+  ],
+  "blues": [
+   [
+    "mozart",
+    13
+   ],
+   [
+    "brahms",
+    5
+   ],
+   [
+    "schubert",
+    5
+   ]
+  ],
+  "country": [
+   [
+    "mozart",
+    18
+   ],
+   [
+    "schubert",
+    5
+   ],
+   [
+    "haydn",
+    2
+   ]
+  ],
+  "edm": [
+   [
+    "mendelssohn",
+    21
+   ],
+   [
+    "vivaldi",
+    4
+   ],
+   [
+    "beethoven",
+    2
+   ]
+  ],
+  "hiphop": [
+   [
+    "schubert",
+    15
+   ],
+   [
+    "beethoven",
+    4
+   ],
+   [
+    "brahms",
+    3
+   ]
+  ],
+  "indie": [
+   [
+    "mozart",
+    7
+   ],
+   [
+    "mendelssohn",
+    6
+   ],
+   [
+    "beethoven",
+    6
+   ]
+  ],
+  "kpop": [
+   [
+    "beethoven",
+    19
+   ],
+   [
+    "mendelssohn",
+    5
+   ],
+   [
+    "mozart",
+    4
+   ]
+  ],
+  "latin": [
+   [
+    "brahms",
+    11
+   ],
+   [
+    "beethoven",
+    9
+   ],
+   [
+    "schubert",
+    7
+   ]
+  ],
+  "pop": [
+   [
+    "mozart",
+    18
+   ],
+   [
+    "mendelssohn",
+    5
+   ],
+   [
+    "schubert",
+    3
+   ]
+  ],
+  "rnb": [
+   [
+    "schubert",
+    20
+   ],
+   [
+    "chopin",
+    6
+   ],
+   [
+    "bach",
+    2
+   ]
+  ],
+  "rock": [
+   [
+    "mendelssohn",
+    12
+   ],
+   [
+    "mozart",
+    5
+   ]
+  ]
+ },
+ "by_w": {
+  "0.3": {
+   "C": 0.7851957473135837,
+   "R": 0.9318530703969334
+  },
+  "0.5": {
+   "C": 0.8154978840850811,
+   "R": 0.9055794932744918
+  },
+  "0.7": {
+   "C": 0.8550195879402547,
+   "R": 0.8640960996014254
+  }
+ }
+}

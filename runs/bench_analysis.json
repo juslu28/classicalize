@@ -1,0 +1,282 @@
+{
+ "summary": {
+  "tempo_ok": 0.8666666666666667,
+  "key_ok": 0.7,
+  "key_or_relative": 0.8666666666666667,
+  "chord_root_acc": 0.9888030159126444,
+  "melody_pc_acc": 0.9744390202962533,
+  "melody_recall": 0.9439566051048683
+ },
+ "rows": [
+  {
+   "genre": "pop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9809523809523809,
+   "melody_recall": 0.9292035398230089
+  },
+  {
+   "genre": "ballad",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9875259875259875,
+   "melody_recall": 0.9487179487179487
+  },
+  {
+   "genre": "rock",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9662921348314607,
+   "melody_recall": 0.9508547008547008
+  },
+  {
+   "genre": "edm",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": false,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9888888888888889,
+   "melody_recall": 0.989010989010989
+  },
+  {
+   "genre": "hiphop",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9821428571428571,
+   "melody_recall": 0.8888888888888888
+  },
+  {
+   "genre": "rnb",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9689737470167065,
+   "melody_recall": 0.9108695652173913
+  },
+  {
+   "genre": "country",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.978448275862069,
+   "melody_recall": 0.9872340425531915
+  },
+  {
+   "genre": "kpop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9696202531645569,
+   "melody_recall": 0.9404761904761905
+  },
+  {
+   "genre": "latin",
+   "tempo_ok": false,
+   "key_ok": false,
+   "key_or_relative": true,
+   "chord_root_acc": 0.9531914893617022,
+   "melody_pc_acc": 0.9592326139088729,
+   "melody_recall": 0.9477272727272728
+  },
+  {
+   "genre": "blues",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9690721649484536,
+   "melody_recall": 0.9758551307847082
+  },
+  {
+   "genre": "indie",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": false,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9794520547945206,
+   "melody_recall": 0.9668874172185431
+  },
+  {
+   "genre": "pop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9644549763033176,
+   "melody_recall": 0.9274725274725275
+  },
+  {
+   "genre": "ballad",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9918533604887984,
+   "melody_recall": 0.9979674796747967
+  },
+  {
+   "genre": "rock",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9775280898876404,
+   "melody_recall": 0.9866962305986696
+  },
+  {
+   "genre": "edm",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": false,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9575471698113207,
+   "melody_recall": 0.9571106094808126
+  },
+  {
+   "genre": "hiphop",
+   "tempo_ok": false,
+   "key_ok": false,
+   "key_or_relative": true,
+   "chord_root_acc": 0.8717948717948718,
+   "melody_pc_acc": 0.9689922480620154,
+   "melody_recall": 0.5986078886310905
+  },
+  {
+   "genre": "rnb",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": false,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9534883720930233,
+   "melody_recall": 0.9258373205741627
+  },
+  {
+   "genre": "country",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9876796714579056,
+   "melody_recall": 0.9798792756539235
+  },
+  {
+   "genre": "kpop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9949238578680203,
+   "melody_recall": 0.9380952380952381
+  },
+  {
+   "genre": "latin",
+   "tempo_ok": false,
+   "key_ok": false,
+   "key_or_relative": true,
+   "chord_root_acc": 0.9533898305084746,
+   "melody_pc_acc": 0.9465116279069767,
+   "melody_recall": 0.9368191721132898
+  },
+  {
+   "genre": "blues",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9846153846153847,
+   "melody_recall": 0.974304068522484
+  },
+  {
+   "genre": "indie",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9769874476987448,
+   "melody_recall": 0.9815195071868583
+  },
+  {
+   "genre": "pop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9671361502347418,
+   "melody_recall": 0.9530201342281879
+  },
+  {
+   "genre": "ballad",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9891540130151844,
+   "melody_recall": 0.9787685774946921
+  },
+  {
+   "genre": "rock",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9889867841409692,
+   "melody_recall": 0.9438669438669439
+  },
+  {
+   "genre": "edm",
+   "tempo_ok": true,
+   "key_ok": false,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9392523364485982,
+   "melody_recall": 0.9661399548532731
+  },
+  {
+   "genre": "hiphop",
+   "tempo_ok": false,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 0.8857142857142857,
+   "melody_pc_acc": 0.9764705882352941,
+   "melody_recall": 0.9550561797752809
+  },
+  {
+   "genre": "rnb",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9731051344743277,
+   "melody_recall": 0.9445727482678984
+  },
+  {
+   "genre": "country",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9913419913419913,
+   "melody_recall": 0.9746835443037974
+  },
+  {
+   "genre": "kpop",
+   "tempo_ok": true,
+   "key_ok": true,
+   "key_or_relative": true,
+   "chord_root_acc": 1.0,
+   "melody_pc_acc": 0.9725400457665904,
+   "melody_recall": 0.9625550660792952
+  }
+ ]
+}

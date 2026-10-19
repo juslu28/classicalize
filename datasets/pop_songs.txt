@@ -1,0 +1,219 @@
+# ~200 widely streamed songs across genres and decades (one per line: Title - Artist)
+# pop
+Blinding Lights - The Weeknd
+Shape of You - Ed Sheeran
+Levitating - Dua Lipa
+As It Was - Harry Styles
+Bad Guy - Billie Eilish
+Anti-Hero - Taylor Swift
+Shake It Off - Taylor Swift
+Blank Space - Taylor Swift
+Love Story - Taylor Swift
+Flowers - Miley Cyrus
+drivers license - Olivia Rodrigo
+good 4 u - Olivia Rodrigo
+Espresso - Sabrina Carpenter
+Watermelon Sugar - Harry Styles
+Someone Like You - Adele
+Rolling in the Deep - Adele
+Hello - Adele
+Easy On Me - Adele
+Uptown Funk - Mark Ronson ft. Bruno Mars
+Just the Way You Are - Bruno Mars
+Grenade - Bruno Mars
+Locked Out of Heaven - Bruno Mars
+Perfect - Ed Sheeran
+Thinking Out Loud - Ed Sheeran
+Photograph - Ed Sheeran
+Stay With Me - Sam Smith
+Happier - Marshmello & Bastille
+Señorita - Shawn Mendes & Camila Cabello
+Havana - Camila Cabello
+Sorry - Justin Bieber
+Love Yourself - Justin Bieber
+Peaches - Justin Bieber
+Stay - The Kid LAROI & Justin Bieber
+Firework - Katy Perry
+Roar - Katy Perry
+Teenage Dream - Katy Perry
+Bad Romance - Lady Gaga
+Poker Face - Lady Gaga
+Shallow - Lady Gaga & Bradley Cooper
+Toxic - Britney Spears
+...Baby One More Time - Britney Spears
+Umbrella - Rihanna
+Diamonds - Rihanna
+We Found Love - Rihanna
+Halo - Beyonce
+Crazy in Love - Beyonce
+Call Me Maybe - Carly Rae Jepsen
+Royals - Lorde
+Chandelier - Sia
+Cheap Thrills - Sia
+Counting Stars - OneRepublic
+Viva La Vida - Coldplay
+Fix You - Coldplay
+Yellow - Coldplay
+A Sky Full of Stars - Coldplay
+Paradise - Coldplay
+Let Her Go - Passenger
+Riptide - Vance Joy
+Somebody That I Used to Know - Gotye
+Rather Be - Clean Bandit
+Cruel Summer - Taylor Swift
+Vampire - Olivia Rodrigo
+Unholy - Sam Smith & Kim Petras
+Dance Monkey - Tones and I
+Shivers - Ed Sheeran
+Save Your Tears - The Weeknd
+Starboy - The Weeknd
+Die With A Smile - Lady Gaga & Bruno Mars
+Birds of a Feather - Billie Eilish
+Ocean Eyes - Billie Eilish
+Lovely - Billie Eilish & Khalid
+Heat Waves - Glass Animals
+Golden Hour - JVKE
+Snowman - Sia
+Let It Go - Idina Menzel
+All of Me - John Legend
+Thousand Years - Christina Perri
+Say You Won't Let Go - James Arthur
+Someone You Loved - Lewis Capaldi
+Before You Go - Lewis Capaldi
+Too Good at Goodbyes - Sam Smith
+Faded - Alan Walker
+# rock / indie / alt
+Mr. Brightside - The Killers
+Bohemian Rhapsody - Queen
+Don't Stop Me Now - Queen
+Smells Like Teen Spirit - Nirvana
+Wonderwall - Oasis
+Don't Look Back in Anger - Oasis
+Creep - Radiohead
+Seven Nation Army - The White Stripes
+Believer - Imagine Dragons
+Radioactive - Imagine Dragons
+Demons - Imagine Dragons
+Thunder - Imagine Dragons
+Sweet Child O' Mine - Guns N' Roses
+Livin' on a Prayer - Bon Jovi
+Hotel California - Eagles
+Africa - Toto
+Take On Me - a-ha
+Every Breath You Take - The Police
+Billie Jean - Michael Jackson
+Beat It - Michael Jackson
+Thriller - Michael Jackson
+Hey Jude - The Beatles
+Let It Be - The Beatles
+Yesterday - The Beatles
+Here Comes the Sun - The Beatles
+Imagine - John Lennon
+Stairway to Heaven - Led Zeppelin
+Numb - Linkin Park
+In the End - Linkin Park
+Do I Wanna Know? - Arctic Monkeys
+505 - Arctic Monkeys
+Sweater Weather - The Neighbourhood
+Pumped Up Kicks - Foster the People
+Take Me to Church - Hozier
+Iris - Goo Goo Dolls
+Chasing Cars - Snow Patrol
+The Scientist - Coldplay
+Somebody to Love - Queen
+Under Pressure - Queen & David Bowie
+Heroes - David Bowie
+Losing My Religion - R.E.M.
+Zombie - The Cranberries
+Everlong - Foo Fighters
+Use Somebody - Kings of Leon
+Pompeii - Bastille
+Little Talks - Of Monsters and Men
+# hip hop / rap
+Lose Yourself - Eminem
+Without Me - Eminem
+Mockingbird - Eminem
+God's Plan - Drake
+Hotline Bling - Drake
+One Dance - Drake
+HUMBLE. - Kendrick Lamar
+Not Like Us - Kendrick Lamar
+Sicko Mode - Travis Scott
+Rockstar - Post Malone
+Circles - Post Malone
+Sunflower - Post Malone & Swae Lee
+Old Town Road - Lil Nas X
+Montero - Lil Nas X
+Industry Baby - Lil Nas X & Jack Harlow
+Stronger - Kanye West
+Gold Digger - Kanye West
+In Da Club - 50 Cent
+Empire State of Mind - Jay-Z & Alicia Keys
+See You Again - Wiz Khalifa ft. Charlie Puth
+Lucid Dreams - Juice WRLD
+Mask Off - Future
+Hey Ya! - OutKast
+Gangsta's Paradise - Coolio
+# R&B / soul / funk
+No Scrubs - TLC
+Thinkin Bout You - Frank Ocean
+Redbone - Childish Gambino
+Kill Bill - SZA
+Snooze - SZA
+Leave the Door Open - Silk Sonic
+Earned It - The Weeknd
+Ordinary People - John Legend
+If I Ain't Got You - Alicia Keys
+Fallin' - Alicia Keys
+Get Lucky - Daft Punk
+Happy - Pharrell Williams
+Valerie - Amy Winehouse
+Rehab - Amy Winehouse
+I Wanna Dance with Somebody - Whitney Houston
+I Will Always Love You - Whitney Houston
+September - Earth, Wind & Fire
+# electronic / dance
+Wake Me Up - Avicii
+Levels - Avicii
+Titanium - David Guetta ft. Sia
+Lean On - Major Lazer & DJ Snake
+Closer - The Chainsmokers ft. Halsey
+Something Just Like This - The Chainsmokers & Coldplay
+Animals - Martin Garrix
+Clarity - Zedd
+Summer - Calvin Harris
+One Kiss - Calvin Harris & Dua Lipa
+Don't Start Now - Dua Lipa
+Sandstorm - Darude
+Strobe - deadmau5
+# country / folk
+Jolene - Dolly Parton
+Tennessee Whiskey - Chris Stapleton
+Before He Cheats - Carrie Underwood
+Last Night - Morgan Wallen
+Need You Now - Lady A
+Take Me Home, Country Roads - John Denver
+Ho Hey - The Lumineers
+I Will Wait - Mumford & Sons
+Fast Car - Tracy Chapman
+# K-pop / J-pop
+Dynamite - BTS
+Butter - BTS
+Spring Day - BTS
+How You Like That - BLACKPINK
+DDU-DU DDU-DU - BLACKPINK
+Gangnam Style - PSY
+Super Shy - NewJeans
+Idol - YOASOBI
+Lemon - Kenshi Yonezu
+# latin
+Despacito - Luis Fonsi ft. Daddy Yankee
+Gasolina - Daddy Yankee
+Bailando - Enrique Iglesias
+Hips Don't Lie - Shakira
+Waka Waka - Shakira
+Mi Gente - J Balvin & Willy William
+Tití Me Preguntó - Bad Bunny
+Dakiti - Bad Bunny & Jhay Cortez
+La Bamba - Ritchie Valens
+Bésame Mucho - Andrea Bocelli
